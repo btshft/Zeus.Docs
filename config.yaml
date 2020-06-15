@@ -1,5 +1,5 @@
 baseURL: /
-title: Zeus Docs
+title: Zeus Preview
 theme: book
 
 disablePathToLower: false
@@ -15,18 +15,18 @@ markup:
       unsafe: true
 
 languages:
-  en:
-    languageName: English
-    contentDir: content
-    weight: 1
   ru:
     languageName: Russian
     contentDir: content.ru
+    weight: 1
+  en:
+    languageName: English
+    contentDir: content
     weight: 2
 
 menu:
   after:
-  - name: "Zeus - GitHub"
+  - name: "GitHub"
     url: "https://github.com/btshft/Zeus"
 
 params:
@@ -41,7 +41,7 @@ params:
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
-  # BookMenuBundle: /menu
+  BookMenuBundle: /menu
 
   # (Optional, default docs) Specify root page to render child pages as menu.
   # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/

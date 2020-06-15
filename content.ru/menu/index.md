@@ -1,0 +1,11 @@
+---
+headless: true
+---
+- [Главная]({{< relref "/" >}})
+- [Начало работы]({{< relref "/docs/quickstart/" >}})
+- [Поддерживаемые команды]({{< relref "/docs/features/commands" >}})
+- [Шаблоны уведомлений]({{< relref "/docs/features/alert-templates" >}})
+- [Прокси]({{< relref "/docs/features/proxy" >}})
+- [Тестирование]({{< relref "/docs/features/testing" >}})
+- [Развертывание ]({{< relref "/docs/deployment/" >}})
+  - [Docker]({{< relref "/docs/deployment/docker" >}})

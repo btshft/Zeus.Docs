@@ -1,41 +1,71 @@
 ---
 title: Введение
 type: docs
+bookToC: false
 ---
 
-# Привет
+{{< hint warning >}}
+⚠️ Приложение еще находится в стадии активной разработки и пока не готово к использованию.
+Следите за статусом разработки в официальном репозитории проекта на Github. 
+{{< /hint >}}
+
+# Привет!
+
+Вы попали на главную страницу документации проекта [Zeus](#). 
+
+**Zeus** - это приложение с открытым исходным кодом, предназначенное для интеграции с системой мониторинга [Prometheus](#). Главной задачей которого является отправка уведомлений генерируемых [Alertmanager'ом](#) в Telegram. 
+
+Главной отличительной особенностью приложения является поддержка встроенная поддержка каналов, то есть если вы хотите разделить уведомления по группам - вам больше не нужно поднимать отдельное веб-приложение для каждого чата. Приложение обладает следующими особенностями.
+
+## Каналы
+
+Канал определяет куда попадут уведомления отправленные системой мониторинга.
+Понятие канала аналогично понятию получателей (receivers) в Alertmanager, вы можете 
+задать нужные каналы и указать их в конфигурации Alermanager следующим образом
+```
+receivers:
+- name: 'telegram-my-channel'
+  webhook_configs:
+  - send_resolved: true
+    url: 'http://<bot-url>/api/v1.0/webhook/alerts/<channel>'
+```
+А далее остается только подписаться на нужный канал в Telegram с помощью команды боту.
 
 {{< columns >}}
-## Astris ipse furtiva
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+## Подписки
+
+Подписывайтесь на нужные каналы из чатов в Telegram с помощью команды `/subscribe`.
+Один чат может быть подписан на множество каналов. Как только подписка будет оформлена,
+уведомления начнут приходить в чат Telegram.
 
 <--->
 
-## Suis quot vota
+## Шаблоны
+Шаблоны для уведомлений поддерживают форматы HTML и Markdown. Для отображения шаблонов
+используется движок [Scriban](#).
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
+<--->
+## Прокси
+Приложение поддерживает взаимодействие с Telegram через прокси. Поддерживаются прокси формата HTTP и Socks5. 
+
 {{< /columns >}}
 
+{{< columns >}}
+## Docker-ready
+Приложение готово к работе внутри Docker и Kubernetes. Официальный образ доступен в [Docker Hub](#).
 
-## Tempora nisi nunc
+<--->
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+## Авторизация
+Авторизация основана на сравнении идентификатора отправителя с белым списком. 
+Бот не будет взаимодействовать с незнакомцами.
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
+<--->
 
-## Locis suis novi cum suoque decidit eadem
+## Метрики и Хелс-чеки
+Приложение сообщает о своем состоянии через стандартные конечные точки `/metrics` и `/health`.
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+{{< /columns >}}
+
+Более подробную информацию об особенностях, способах развертывания, и прочем, можно узнать в соответствующих разделах документации на сайте.

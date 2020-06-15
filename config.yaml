@@ -1,5 +1,5 @@
 baseURL: /
-title: Zeus
+title: Zeus Docs
 theme: book
 
 disablePathToLower: false
@@ -21,7 +21,7 @@ languages:
     weight: 1
   ru:
     languageName: Russian
-    conrentDir: content.ru
+    contentDir: content.ru
     weight: 2
 
 menu:

@@ -1,13 +1,11 @@
 baseURL: /
-title: Zeus Preview
+title: Zeus Docs
 theme: book
 
 disablePathToLower: false
 enableGitInfo: true
 
-disableKinds:
-- 'taxonomy'
-- 'taxonomyTerm'
+defaultContentLanguage: ru
 
 markup:
   goldmark:
@@ -17,11 +15,11 @@ markup:
 languages:
   ru:
     languageName: Russian
-    contentDir: content.ru
+    contentDir: content/ru
     weight: 1
   en:
     languageName: English
-    contentDir: content
+    contentDir: content/en
     weight: 2
 
 menu:
